@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="MyTodo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hyH-KF-7Bj">
+                                <rect key="frame" x="0.0" y="53" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="メイン画面" id="Ryf-Ix-35f">
+                                        <barButtonItem key="rightBarButtonItem" title="追加する" style="done" id="OTW-Oe-lOh">
+                                            <connections>
+                                                <segue destination="zbN-Ns-9Ma" kind="show" id="mD2-DZ-Li4"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bkP-ZQ-Dpr">
+                                <rect key="frame" x="0.0" y="97" width="375" height="715"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoCell" id="x7e-jq-RLa">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="x7e-jq-RLa" id="WwF-M9-hzk">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.666666666666664"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="RWM-qR-J2E"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="E15-W4-XXg"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bkP-ZQ-Dpr" firstAttribute="top" secondItem="hyH-KF-7Bj" secondAttribute="bottom" id="3Of-vV-ipb"/>
+                            <constraint firstItem="hyH-KF-7Bj" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="9" id="3fU-1D-ThR"/>
+                            <constraint firstAttribute="trailing" secondItem="hyH-KF-7Bj" secondAttribute="trailing" id="8fl-ij-WRn"/>
+                            <constraint firstItem="bkP-ZQ-Dpr" firstAttribute="leading" secondItem="hyH-KF-7Bj" secondAttribute="leading" id="Bsv-De-u7A"/>
+                            <constraint firstItem="bkP-ZQ-Dpr" firstAttribute="trailing" secondItem="hyH-KF-7Bj" secondAttribute="trailing" id="Fok-V9-2PE"/>
+                            <constraint firstItem="hyH-KF-7Bj" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="OHo-OO-FXy"/>
+                            <constraint firstAttribute="bottom" secondItem="bkP-ZQ-Dpr" secondAttribute="bottom" id="iue-BM-h7C"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="136.80000000000001" y="132.26600985221674"/>
+        </scene>
+        <!--Add Controller-->
+        <scene sceneID="fH8-bk-4mE">
+            <objects>
+                <viewController id="zbN-Ns-9Ma" customClass="AddController" customModule="MyTodo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2bB-Xv-RxC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Upx-cZ-Ebm">
+                                <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="追加画面" id="dd9-4S-zlA">
+                                        <barButtonItem key="leftBarButtonItem" title="戻る" style="done" id="ms9-aZ-3Ee">
+                                            <connections>
+                                                <segue destination="BYZ-38-t0r" kind="show" id="V3c-yo-zlg"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="J7L-us-MXv">
+                                <rect key="frame" x="44" y="124" width="286" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uil-dS-rAo">
+                                <rect key="frame" x="157" y="250" width="62" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="追加する"/>
+                                <connections>
+                                    <action selector="TodoAddButton:" destination="zbN-Ns-9Ma" eventType="touchUpInside" id="yNh-3Y-9ds"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Upx-cZ-Ebm" firstAttribute="leading" secondItem="2bB-Xv-RxC" secondAttribute="leading" id="Erc-Fr-Fsa"/>
+                            <constraint firstItem="Upx-cZ-Ebm" firstAttribute="top" secondItem="U8k-l8-zfb" secondAttribute="top" id="OKB-O9-cGs"/>
+                            <constraint firstAttribute="trailing" secondItem="Upx-cZ-Ebm" secondAttribute="trailing" id="eoH-oO-3OO"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="U8k-l8-zfb"/>
+                    </view>
+                    <connections>
+                        <outlet property="TodoTextField" destination="J7L-us-MXv" id="Ucs-Gq-vky"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ock-6O-cKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="928.79999999999995" y="131.52709359605913"/>
+        </scene>
+    </scenes>
+</document>
